@@ -1,0 +1,31 @@
+Your username: 29m0m9+b734dllm6ycc8@grr.la
+
+.text-center - bootstrap
+
+https://everythingfonts.com/font-face
+
+http://www.font2web.com/
+
+http://realfavicongenerator.net/
+
+http://fontsquirrel.com/
+
+http://colorzilla.com/
+
+touch - терминал создать файл
+
+Bower
+
+bower -s jquery -this means bower search juery
+bower info jquery
+bower i jquery#1.6.4 - bower install jquery 1.6.4
+bower i  normalize.css- bower install normalize.css
+bower list - list of the installed packages
+bower list --path - list of the installed packages with path
+bower update jquery
+bower uninstall jquery
+bower init - create manifest file of the bower
+bower i jquery -s
+bower i jquery -D - for development
+bower uninstall jquery -S
+.bowerc расположение файлов устанавливаемых Bower
