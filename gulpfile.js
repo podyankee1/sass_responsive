@@ -4,6 +4,7 @@ var gulp        = require('gulp'),
  prefix      = require('gulp-autoprefixer'),
  cp          = require('child_process'),
  jade          = require('gulp-jade'),
+ del         = require('del'),
  concat = require('gulp-concat'),
  uglify = require('gulp-uglify'),
  gulpif = require('gulp-if'),
@@ -67,6 +68,7 @@ gulp.task('jekyll-build', function (done) {
  * Rebuild Jekyll & do page reload
  */
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+  del.sync(['dist/assets/css/*.scss','dist/assets/libs','dist/assets/maps'])
 	browserSync.reload();
 });
 
@@ -119,6 +121,7 @@ gulp.task('sass', function () {
 		.pipe(sourcemaps.write('../maps'))
 		.pipe(gulp.dest('dist/assets/css'))
 		.pipe(gulp.dest('assets/css'))
+    del.sync(['dist/assets/css/*.scss','dist/assets/libs','dist/assets/maps'])
 		.pipe(browserSync.reload({stream:true}));
 });
 
