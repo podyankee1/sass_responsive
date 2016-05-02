@@ -15,7 +15,7 @@ var gulp        = require('gulp'),
   imagemin = require('gulp-imagemin'),
  pngcrush = require('imagemin-pngcrush'),
  bourbon = require('node-bourbon');
-bourbon.includePaths
+ bourbon.includePaths
 
 
 var env,
@@ -31,7 +31,7 @@ jadeSources = ['_jadefiles/*.jade'];
 imgSources = ['assets/img/**/*.*'];
 jsSources  = ['assets/libs/jquery/dist/jquery.min.js','assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js']
 
-if (env==='production')
+if (env==='development')
 	{
 	sassStyle = 'expanded';
 } else {
@@ -68,7 +68,6 @@ gulp.task('jekyll-build', function (done) {
  * Rebuild Jekyll & do page reload
  */
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-  del.sync(['dist/assets/css/*.scss','dist/assets/libs','dist/assets/maps'])
 	browserSync.reload();
 });
 
@@ -121,8 +120,8 @@ gulp.task('sass', function () {
 		.pipe(sourcemaps.write('../maps'))
 		.pipe(gulp.dest('dist/assets/css'))
 		.pipe(gulp.dest('assets/css'))
-    del.sync(['dist/assets/css/*.scss','dist/assets/libs','dist/assets/maps'])
-		.pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({stream:true}))
+    del.sync(['dist/assets/css/*.scss','dist/assets/libs','dist/assets/maps']);
 });
 
 
